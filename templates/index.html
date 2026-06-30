@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <title>Iris Flower Classification</title>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card shadow-lg mt-5">
+
+        <div class="card-body">
+
+            <h1 class="text-center text-primary">
+                🌸 Iris Flower Classification
+            </h1>
+
+            <h5 class="text-center text-secondary mb-4">
+                Naive Bayes Machine Learning Model
+            </h5>
+
+            <form action="/predict" method="POST">
+
+                <div class="form-group">
+
+                    <label><b>Sepal Length (cm)</b></label>
+
+                    <input
+                    type="text"
+                    class="form-control"
+                    name="sl"
+                    placeholder="Example : 5.1"
+                    required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label><b>Sepal Width (cm)</b></label>
+
+                    <input
+                    type="text"
+                    class="form-control"
+                    name="sw"
+                    placeholder="Example : 3.5"
+                    required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label><b>Petal Length (cm)</b></label>
+
+                    <input
+                    type="text"
+                    class="form-control"
+                    name="pl"
+                    placeholder="Example : 1.4"
+                    required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label><b>Petal Width (cm)</b></label>
+
+                    <input
+                    type="text"
+                    class="form-control"
+                    name="pw"
+                    placeholder="Example : 0.2"
+                    required>
+
+                </div>
+
+                <button class="btn btn-success btn-block">
+
+                    Predict Flower
+
+                </button>
+
+            </form>
+
+            <br>
+
+            {% if prediction_text %}
+
+            <div class="alert alert-info text-center">
+
+                <h3>
+
+                    Prediction :
+                    <br><br>
+
+                    {{ prediction_text }}
+
+                </h3>
+
+            </div>
+
+            {% endif %}
+
+            <hr>
+
+            <h4 class="text-center">
+
+                Project By
+
+                <span class="text-primary">
+
+                    Vanka Sai Chandrika
+
+                </span>
+
+            </h4>
+
+            <h5 class="text-center text-secondary">
+
+                Java Full Stack Developer | Machine Learning Enthusiast
+
+            </h5>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
